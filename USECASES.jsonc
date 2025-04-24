@@ -1,0 +1,48 @@
+// USECASES.jsonc: Use Case Documentation for Vibecoding Projects
+// Purpose: Define a standardized JSONC format for small to mid-scale vibecoding projects.
+// Scope: Supports human-readable docs and programmatic access for AI agents or automation.
+
+[
+    // Meta-Use Case: Define and Use USECASES.jsonc for Vibecoding Projects
+    {
+      "id": "UC-VIBE-META-001",
+      "actors": ["Developer", "AI Agent", "CI/CD Pipeline"],
+      "description": "Define a JSONC-based format to document use cases for small to mid-scale vibecoding projects, enabling human-readable documentation with diagrams and programmatic access for AI agents or automation.",
+      "preconditions": [
+        "Vibecoding project requires structured use case documentation for features (e.g., CLI commands, web endpoints, scripts).",
+        "Developers need lightweight, human-readable docs with flow diagrams.",
+        "AI agents (e.g., Cursor, LLMs) and CI/CD pipelines need parseable data for code generation, analysis, or testing."
+      ],
+      "postconditions": [
+        "USECASES.jsonc is created, storing all project use cases.",
+        "Human-readable documentation (e.g., Markdown with Mermaid diagrams) is generated.",
+        "AI agents and pipelines can parse JSONC for automation or analysis."
+      ],
+      "basic_flow": [
+        "Developer defines JSONC schema with fields: id, actors, description, preconditions, postconditions, basic_flow, core_scenario, feature_specific_scenario, needs, choices_compromises_assumptions, solution, mermaid_flow.",
+        "Developer writes use cases in USECASES.jsonc, documenting project features (e.g., CLI tool, web app, script).",
+        "Developer runs a converter (e.g., Go-based) to generate Markdown with embedded Mermaid diagrams.",
+        "AI agent parses USECASES.jsonc to extract commands, flows, or rationale for code generation or analysis.",
+        "CI/CD pipeline uses USECASES.jsonc to generate tests, validate features, or document APIs."
+      ],
+      "core_scenario": "Document vibecoding project features in a format that supports small teams, AI collaboration, and rapid iteration.",
+      "feature_specific_scenario": "Uses JSONC for parseability, Mermaid for lightweight diagrams, and rationale fields for AI and human context, avoiding subjective metadata.",
+      "needs": [
+        "Structured, objective format for consistent use case documentation across vibecoding projects.",
+        "Human-readable output with visual diagrams for developers.",
+        "Programmatic access for AI-driven workflows (e.g., code generation, test automation).",
+        "Rationale to explain design decisions to developers and AI agents, enhancing collaboration."
+      ],
+      "choices_compromises_assumptions": {
+        "choice": "JSONC for structure, comments, and simplicity over Markdown (less parseable) or XML (heavier).",
+        "compromise": "Requires a converter for human-readable output, adding minor development effort.",
+        "assumption": "Vibecoding developers are familiar with JSONC and Mermaid; AI agents can parse JSON with comment stripping."
+      },
+      "solution": {
+        "command": "go run jsonc2md.go -input USECASES.jsonc -output usecases.md",
+        "summary_stdout": "Generated usecases.md with Mermaid diagrams\nFields: id, actors, description, flows, needs, solution\nUse cases documented",
+        "output": "USECASES.jsonc and usecases.md"
+      },
+      "mermaid_flow": "graph TD;\n  A[Developer] --> B[Define USECASES.jsonc schema];\n  B --> C[Write use cases];\n  C --> D[Run converter];\n  D --> E[Generate Markdown with Mermaid];\n  C --> F[AI Agent parses JSONC];\n  C --> G[CI/CD uses JSONC];"
+    }
+  ]
