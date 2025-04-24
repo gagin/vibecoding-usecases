@@ -32,7 +32,9 @@ The ``USECASES.jsonc`` file stores use cases as a JSON array, with each use case
 - **solution**: Expected output or behavior (e.g., command, result).
 - **mermaid_flow**: Mermaid syntax for flow diagrams.
 
-JSONC (JSON with Comments) ensures parseability while allowing human-readable comments. See ``USECASES.jsonc`` for an example meta-use case.
+JSONC (JSON with Comments) ensures parseability while allowing human-readable comments. See `USECASES.jsonc`_ for an example meta-use case.
+
+.. _USECASES.jsonc: USECASES.jsonc
 
 Usage
 -----
