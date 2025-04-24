@@ -16,47 +16,86 @@ Frameworks Compared
 - **Domain-Driven Design (DDD)**: Event-based modeling for complex domains.
 - **CASE Tools**: Repository-based use cases with automation.
 
-Comparison Table
-----------------
+Framework Comparison Table
+==========================
 
-+-------------------------+---------------------+------------------------------------+----------------------------------+--------------------------+
-| Framework               | Key Features        | Differences from USECASES.jsonc    | Fit for Vibecoding               | Pros/Cons                |
-+=========================+=====================+====================================+==================================+==========================+
-| UML/UP                  | ID, actors, flows,  | Adds alternative flows,            | Moderate: Detailed but heavy     | **Pros**: Comprehensive, |
-|                         | preconditions, UML  | extensions, UML tools. Lacks       | for small teams. Tool dependency | visual.                  |
-|                         | diagrams. Text/XML. | needs, rationale, Mermaid.         | clashes with rapid iteration.    | **Cons**: Complex, tool- |
-|                         |                     |                                    |                                  | dependent.               |
-+-------------------------+---------------------+------------------------------------+----------------------------------+--------------------------+
-| Agile (User Stories)    | As a [role], I want | Simpler, no flows or diagrams.     | High: Lightweight, but lacks     | **Pros**: Simple,        |
-|                         | [action]. Markdown, | Lacks rationale, structure.        | depth for AI parsing.            | iterative.               |
-|                         | JSON.               |                                    |                                  | **Cons**: Too minimal,   |
-|                         |                     |                                    |                                  | no diagrams.            |
-+-------------------------+---------------------+------------------------------------+----------------------------------+--------------------------+
-| UCDD                    | Actors, goal, main  | Similar, but lacks Mermaid,        | High: Narrative structure suits  | **Pros**: Detailed,      |
-|                         | scenario, text/JSON.| needs, rationale. Has extensions.  | vibecoding. No diagrams.         | lightweight.             |
-|                         |                     |                                    |                                  | **Cons**: Lacks visual   |
-|                         |                     |                                    |                                  | aids.                   |
-+-------------------------+---------------------+------------------------------------+----------------------------------+--------------------------+
-| BDD                     | Given-When-Then,    | Concise, no actors or rationale.   | Moderate: Scenarios useful, but  | **Pros**: Parseable,     |
-|                         | Gherkin/JSON.       | Gherkin vs. JSONC. No diagrams.    | Gherkin unfamiliar to vibecoding.| test-friendly.           |
-|                         |                     |                                    |                                  | **Cons**: Limited scope, |
-|                         |                     |                                    |                                  | no diagrams.            |
-+-------------------------+---------------------+------------------------------------+----------------------------------+--------------------------+
-| DDD (Event Storming)    | Events, commands,   | Event-based, no flows or rationale.| Low: Too abstract for simple     | **Pros**: Domain-focused,|
-|                         | JSON/YAML.          | JSON aligns.                       | vibecoding projects.             | parseable.               |
-|                         |                     |                                    |                                  | **Cons**: Lacks flows,   |
-|                         |                     |                                    |                                  | diagrams.               |
-+-------------------------+---------------------+------------------------------------+----------------------------------+--------------------------+
-| CASE Tools              | UML-style,          | Adds repositories, tracing. Lacks  | Low: Heavy for small teams.      | **Pros**: Automated,     |
-|                         | XML/JSON, diagrams. | needs, rationale. UML vs. Mermaid. | Tool overhead unsuitable.        | visual.                  |
-|                         |                     |                                    |                                  | **Cons**: Complex, tool- |
-|                         |                     |                                    |                                  | dependent.               |
-+-------------------------+---------------------+------------------------------------+----------------------------------+--------------------------+
-| USECASES.jsonc          | Actors, flows,      | N/A. Unique in Mermaid, needs,     | Perfect: Tailored for vibecoding,| **Pros**: Lightweight,   |
-|                         | rationale, Mermaid, | rationale. JSONC for simplicity.   | supports AI and human needs.      | AI-friendly, visual.     |
-|                         | JSONC.              |                                    |                                  | **Cons**: Needs converter|
-|                         |                     |                                    |                                  | for docs.               |
-+-------------------------+---------------------+------------------------------------+----------------------------------+--------------------------+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 20 30 25 25
+
+   * - Framework
+     - Key Features
+     - Differences from USECASES.jsonc
+     - Fit for Vibecoding
+     - Pros/Cons
+   * - UML/UP
+     - | ID, actors, flows,
+       | preconditions, UML
+       | diagrams. Text/XML.
+     - | Adds alternative flows,
+       | extensions, UML tools. Lacks
+       | needs, rationale, Mermaid.
+     - | Moderate: Detailed but heavy
+       | for small teams. Tool dependency
+       | clashes with rapid iteration.
+     - | **Pros**: Comprehensive, visual.
+       | **Cons**: Complex, tool-dependent.
+   * - Agile (User Stories)
+     - | As a [role], I want
+       | [action]. Markdown,
+       | JSON.
+     - | Simpler, no flows or diagrams.
+       | Lacks rationale, structure.
+     - | High: Lightweight, but lacks
+       | depth for AI parsing.
+     - | **Pros**: Simple, iterative.
+       | **Cons**: Too minimal, no diagrams.
+   * - UCDD
+     - | Actors, goal, main
+       | scenario, text/JSON.
+     - | Similar, but lacks Mermaid,
+       | needs, rationale. Has extensions.
+     - | High: Narrative structure suits
+       | vibecoding. No diagrams.
+     - | **Pros**: Detailed, lightweight.
+       | **Cons**: Lacks visual aids.
+   * - BDD
+     - | Given-When-Then,
+       | Gherkin/JSON.
+     - | Concise, no actors or rationale.
+       | Gherkin vs. JSONC. No diagrams.
+     - | Moderate: Scenarios useful, but
+       | Gherkin unfamiliar to vibecoding.
+     - | **Pros**: Parseable, test-friendly.
+       | **Cons**: Limited scope, no diagrams.
+   * - DDD (Event Storming)
+     - | Events, commands,
+       | JSON/YAML.
+     - | Event-based, no flows or rationale.
+       | JSON aligns.
+     - | Low: Too abstract for simple
+       | vibecoding projects.
+     - | **Pros**: Domain-focused, parseable.
+       | **Cons**: Lacks flows, diagrams.
+   * - CASE Tools
+     - | UML-style,
+       | XML/JSON, diagrams.
+     - | Adds repositories, tracing. Lacks
+       | needs, rationale. UML vs. Mermaid.
+     - | Low: Heavy for small teams.
+       | Tool overhead unsuitable.
+     - | **Pros**: Automated, visual.
+       | **Cons**: Complex, tool-dependent.
+   * - USECASES.jsonc
+     - | Actors, flows,
+       | rationale, Mermaid,
+       | JSONC.
+     - | N/A. Unique in Mermaid, needs,
+       | rationale. JSONC for simplicity.
+     - | Perfect: Tailored for vibecoding,
+       | supports AI and human needs.
+     - | **Pros**: Lightweight, AI-friendly, visual.
+       | **Cons**: Needs converter for docs.
 
 Why USECASES.jsonc?
 -------------------
