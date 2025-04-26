@@ -1,2 +1,3 @@
+- Integration tests allow to separate situations where AI misunderstood the goal or misimplemented the code
 - If you ask model to write a prompt, there's a chance it will generate a prompt that works better for this specific model, because it will activate same neurons that would be activated by this prompt. Well, obviously not the same exact ones, but there's likely a correlation.
     - Reverse for this rule: rewrite a prompt for a model with the same model
